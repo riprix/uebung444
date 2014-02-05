@@ -1,0 +1,37 @@
+<h1>Fizz#buzz</h1>
+<p>Find me in app/views/fizz/Buzz.html.erb</p>
+<p>Ausgabe</p>
+<table border="1">
+<tr>
+<th>Zahl</th>
+<th>Teilbar durch 3</th>
+<th>Teilbar durch 5</th>
+<th>FizzBuzz</th>
+	<% i=1 %>
+<% while i<=@max_number %>
+<tr>
+ <td> <%= i %> </td> 
+			<% if i%@fizz_number==0then %>
+				  <td><%= "X" %> </td> 
+				  <% else %>
+			 <td> <%="  "%> </td> 
+			<% end %>
+		<% if i%@buzz_number==0 then %>	
+<td>X</td> 
+<% else %>
+			 <td> <%="  "%> </td> 
+			<% end %>
+			<% if  i%@fizz_number==0 && i%@buzz_number==0  then  %>
+			<td style="background-color:yellow;"> <%= @fizz_name + @buzz_name %> </td>
+			<% elsif i%@buzz_number==0 then %>
+			<td> <%= @buzz_name %> </td> 
+			<% elsif i%3==0 then %>
+			<td> <%= @fizz_name %> </td> 
+			<% else %>
+			<td> <%= i %> </td>
+			<% end %>
+<% i=i+1 %>
+ <% end %>
+</tr>
+</tr>
+</table>
